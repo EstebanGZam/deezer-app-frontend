@@ -1,14 +1,22 @@
 import axios from 'axios';
 import { DEEZER_API_URL } from "../constants/global";
+import { DeezerTrack } from '../types';
+
+interface DeezerSearchResponse {
+    data: DeezerTrack[];
+    total: number;
+    next: string;
+}
 
 const deezerApi = {
-    // Search
-    searchTracks: (query) =>
-        axios.get(`${DEEZER_API_URL}/search`, {
+    searchTracks: async (query: string): Promise<DeezerSearchResponse> => {
+        const response = await axios.get<DeezerSearchResponse>(`${DEEZER_API_URL}/search`, {
             params: {
                 q: query
             }
-        }).then(res => res.data)
+        });
+        return response.data;
+    }
 };
 
 export default deezerApi;
