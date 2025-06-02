@@ -13,13 +13,19 @@ const SearchBar = ({
         type="text"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        onKeyPress={(e) => e.key === "Enter" && onSearch()}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" && value.trim()) {
+            onSearch();
+          }
+        }}
         placeholder={placeholder}
-        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-black"
       />
     </div>
     <button
-      onClick={onSearch}
+      onClick={() => {
+        if (value.trim()) onSearch();
+      }}
       className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
     >
       Buscar

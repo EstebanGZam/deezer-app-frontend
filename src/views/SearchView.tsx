@@ -23,6 +23,7 @@ const SearchView: React.FC<SearchViewProps> = ({
     searchQuery,
     setSearchQuery,
     searchResults,
+    hasSearched,
     loadingSearch,
     searchTracks,
   } = useTrackSearch();
@@ -50,7 +51,7 @@ const SearchView: React.FC<SearchViewProps> = ({
 
         {loadingSearch ? (
           <LoadingSpinner />
-        ) : searchResults.length === 0 ? (
+        ) : hasSearched && searchResults.length === 0 ? (
           searchQuery && (
             <div className="text-center py-12">
               <SearchIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
