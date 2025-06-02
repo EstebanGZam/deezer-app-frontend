@@ -31,7 +31,6 @@ const PlaylistsView: React.FC<PlaylistsViewProps> = ({ onOpenPlaylist }) => {
     <div className="min-h-screen bg-gray-50">
       <Header
         title="Mis Playlists"
-        onBack={() => window.history.back()}
         action={
           <div className="flex items-center space-x-3">
             <input
@@ -54,7 +53,7 @@ const PlaylistsView: React.FC<PlaylistsViewProps> = ({ onOpenPlaylist }) => {
         }
       />
 
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="p-6">
         {loading ? (
           <LoadingSpinner />
         ) : playlists.length === 0 ? (

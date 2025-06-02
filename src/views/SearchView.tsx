@@ -36,10 +36,9 @@ const SearchView: React.FC<SearchViewProps> = ({
       <Header
         title={`Buscar para "${selectedPlaylist?.name || "playlist"}"`}
         onBack={onBack}
-        action={() => {}}
       />
 
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="p-6">
         <div className="mb-6">
           <SearchBar
             value={searchQuery}
@@ -52,7 +51,7 @@ const SearchView: React.FC<SearchViewProps> = ({
         {loadingSearch ? (
           <LoadingSpinner />
         ) : searchResults.length === 0 ? (
-          searchQuery && ( //Show only if something has been searched for
+          searchQuery && (
             <div className="text-center py-12">
               <SearchIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
               <p className="text-gray-500">

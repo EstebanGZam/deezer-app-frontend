@@ -62,7 +62,7 @@ const TracksView: React.FC<TracksViewProps> = ({
         }
       />
 
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="p-6">
         {loadingTracks ? (
           <LoadingSpinner />
         ) : playlistTracks.length === 0 ? (
