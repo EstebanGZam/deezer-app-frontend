@@ -8,9 +8,7 @@ const PlaylistCard = ({ playlist, onClick, onDelete }) => (
       </div>
       <div className="flex-1">
         <h3 className="text-lg font-semibold text-gray-800">{playlist.name}</h3>
-        <p className="text-gray-500">
-          Playlist • {playlist.trackCount || 0} canciones
-        </p>
+        <p className="text-gray-500">Mood • {playlist.mood || 0}</p>
       </div>
     </div>
     {onDelete && (

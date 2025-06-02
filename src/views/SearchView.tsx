@@ -38,7 +38,7 @@ const SearchView: React.FC<SearchViewProps> = ({
         onBack={onBack}
       />
 
-      <div className="p-6">
+      <div className="w-full p-6">
         <div className="mb-6">
           <SearchBar
             value={searchQuery}
